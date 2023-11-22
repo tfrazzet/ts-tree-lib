@@ -1,0 +1,34 @@
+{
+  "author": "Tommaso Frazzetto <tommaso.frazzetto@yahoo.com>",
+  "bugs": {
+    "url": "https://github.com/tfrazzet/ts-tree-lib/issues"
+  },
+  "description": "TsTreeLibrary is a TypeScript library designed to provide a flexible and efficient implementation of tree data structures. ",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.5",
+    "typedoc": "^0.25.3",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "typescript",
+    "tree",
+    "library"
+  ],
+  "license": "GPL-3",
+  "main": "dist/index.js",
+  "name": "ts-tree-lib",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tfrazzet/ts-tree-lib.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "docs": "typedoc --out docs --tsconfig tsconfig.json --exclude '**/*.spec.ts' --entryPoints ./src --entryPointStrategy expand",
+    "test": "jest"
+  },
+  "types": "dist/index.d.ts",
+  "version": "1.0.0"
+}
