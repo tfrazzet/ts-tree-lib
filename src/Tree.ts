@@ -49,8 +49,12 @@ export class Tree<NodeModelType> {
 
     // Create a new root node with the model and index from the object
     const rootNode = new TreeNode(object.model, object.index);
-    // Recursively parse the children of the root node
-    this.parseChildren(rootNode, object.children);
+
+    if (object.children) {
+      // Recursively parse the children of the root node
+      this.parseChildren(rootNode, object.children);
+    }
+
     return rootNode;
   }
 
@@ -63,6 +67,8 @@ export class Tree<NodeModelType> {
     parentNode: TreeNode<NodeModelType>,
     children: any[]
   ): void {
+    if (!children) return;
+
     children.forEach((childData, index) => {
       // Create a new child node with the model and index from the child data
       const childNode = new TreeNode(childData.model, index + 1); // Assuming index starts from 1
