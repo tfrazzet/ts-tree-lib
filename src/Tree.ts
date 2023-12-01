@@ -48,7 +48,7 @@ export class Tree<NodeModelType> {
     }
 
     // Create a new root node with the model and index from the object
-    const rootNode = new TreeNode(object.model, object.index);
+    const rootNode = new TreeNode(object, 0);
 
     if (object.children) {
       // Recursively parse the children of the root node
@@ -71,7 +71,7 @@ export class Tree<NodeModelType> {
 
     children.forEach((childData, index) => {
       // Create a new child node with the model and index from the child data
-      const childNode = new TreeNode(childData.model, index + 1); // Assuming index starts from 1
+      const childNode = new TreeNode(childData, index + 1); // Assuming index starts from 1
       // Add the child node to the parent node
       parentNode.addChild(childNode);
 
